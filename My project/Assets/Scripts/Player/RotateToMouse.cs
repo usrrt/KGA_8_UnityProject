@@ -10,7 +10,7 @@ public class RotateToMouse : MonoBehaviour
     private float eulerAngleX; 
     private float eulerAngleY;
 
-    [SerializeField] private Camera sight;
+    public Camera sight;
     private Rigidbody _rb;
 
 
@@ -25,7 +25,6 @@ public class RotateToMouse : MonoBehaviour
         // 마우스 상/하 이동으로 카메라 x축 회전
         // 마우스를 아래로 내리면 음수인데 오브젝트의 x축이 +방향으로 회전해야 아래를 보기때문에 -=감소연산자로 설정
         eulerAngleX -= mouseY * Gamemanager.Instance.lookSensitivity;
-
         // 카메라 x축 회전의 경우 회전 범위를 설정해야한다
         eulerAngleX = ClampAngle(eulerAngleX, limitMinX, limitMaxX);
 

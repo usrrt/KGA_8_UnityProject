@@ -8,6 +8,7 @@ public class PlayerInput : MonoBehaviour
     public float zPos { get; private set; }
     public float mouseLR { get; private set; }
     public float mouseUD { get; private set; }
+    
 
     private void Awake()
     {
