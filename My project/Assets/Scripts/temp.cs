@@ -21,19 +21,19 @@ public class temp : MonoBehaviour
 {
     private void Start()
     {
-        // TextAsset: 텍스트 파일 불러오기
-        // Text파일 or 바이너리 파일
+        // 1. Resources 폴더에 있는 CSV파일을 TestAsset으로 로드
         TextAsset tempText = Resources.Load<TextAsset>("Csv/CSV연습");
 
+        // 2. CSV파일 설정
         CsvConfiguration config = new CsvConfiguration(CultureInfo.InvariantCulture)
         {
             
             Delimiter = "|",
-            NewLine = Environment.NewLine, // 개행문자 신경안쓰고 어쩌거 
+            NewLine = Environment.NewLine, // 플랫폼 환경에 맞는 개행문자 사용 정의
             
         };
 
-         // 파싱준비완료
+         // 3. CSV 파싱
         using(StringReader csvString = new StringReader(tempText.text)) // 괄호안에 IDisposable구현하고있는 객체를 넣어준다
         {
             using (CsvReader csv = new CsvReader(csvString, config))
@@ -44,13 +44,9 @@ public class temp : MonoBehaviour
                     Debug.Log($"{record.ID} : {record.Name}");
                 } // 병목지점이 될수있기에 시간이 오래걸릴수있다.
             }
-        } // 블록범위를 벗어날때 Dispose 를ㄹ 자동을 호출함 
+        } // 블록범위를 벗어날때 Dispose를 자동을 호출함 
 
-        // 명시적으로 닫는 메소드 호출
-        //csv.Dispose();
-        //csvString.Dispose();
-        // 귀찮고 잊어비리는 실수존재 따라서 using구문으로 자동으로호출하게해줘야한다
 
-    } // 파싱완료
+    } 
     
 }

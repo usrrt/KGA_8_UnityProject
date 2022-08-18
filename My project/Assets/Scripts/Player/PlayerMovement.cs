@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private PlayerInput _input;
-    private Rigidbody _rb;
     private RotateToMouse _rotateToMouse;
 
     public float Speed = 3f;
@@ -13,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _input = GetComponent<PlayerInput>();
-        _rb = GetComponent<Rigidbody>();
         _rotateToMouse = GetComponent<RotateToMouse>();
     }
 
@@ -25,16 +23,14 @@ public class PlayerMovement : MonoBehaviour
     
     private void Move()
     {
-        Vector3 moveHorizontal = transform.right * _input.xPos;
-        Vector3 moveVertical = transform.forward * _input.zPos;
 
-        Vector3 velocity = (moveHorizontal + moveVertical).normalized * Speed;
+        transform.Translate(new Vector3(_input.xPos, 0, _input.zPos) * Speed * Time.deltaTime);
 
-        _rb.MovePosition(transform.position + velocity * Time.deltaTime);
     }
 
     private void Look()
     {
-        _rotateToMouse.UpdateRotate(_input.mouseLR, _input.mouseUD);
+        _rotateToMouse.CameraRotate(_input.mouseUD);
+        _rotateToMouse.CharacterRotate(_input.mouseLR);
     }
 }

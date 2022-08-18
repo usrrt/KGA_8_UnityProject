@@ -21,8 +21,8 @@ public class PlayerInput : MonoBehaviour
         xPos = Input.GetAxis("Horizontal");
         zPos = Input.GetAxis("Vertical");
 
-        mouseLR = Input.GetAxis("Mouse X");
-        mouseUD = Input.GetAxis("Mouse Y");
+        mouseLR = Input.GetAxisRaw("Mouse X");
+        mouseUD = Input.GetAxisRaw("Mouse Y");
     }
 
 }
