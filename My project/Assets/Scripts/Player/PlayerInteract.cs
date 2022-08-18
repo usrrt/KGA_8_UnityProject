@@ -6,6 +6,7 @@ public class PlayerInteract : MonoBehaviour
 {
     private Camera cam;
     private PlayerUI _playerUI;
+    private PlayerInput _playerInput;
 
     [SerializeField]
     private float distance = 3f;
@@ -17,12 +18,13 @@ public class PlayerInteract : MonoBehaviour
     {
         cam = GetComponent<RotateToMouse>().sight;
         _playerUI = GetComponent<PlayerUI>();
+        _playerInput = GetComponent<PlayerInput>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        _playerUI.UpdateText(string.Empty);
+        _playerUI.UpdateText("");
         // ray생성
         Ray ray = new Ray(cam.transform.position, cam.transform.forward); // origin, direction
         Debug.DrawRay(ray.origin, ray.direction * distance);
@@ -30,9 +32,18 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hitInfo;
         if(Physics.Raycast(ray, out hitInfo, distance, layer))
         {
-            // 설정한 레이어마스크에 닿을시 실행할 구문
-            //Debug.Log(hitInfo.collider.GetComponent<Interactable>().PromtMessage);
-            _playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().PromtMessage);
+            if(hitInfo.collider.GetComponent<Interactable>() != null)
+            {
+                var interactable = hitInfo.collider.GetComponent<Interactable>();
+                // 설정한 레이어마스크에 닿을시 실행할 구문
+                //Debug.Log(hitInfo.collider.GetComponent<Interactable>().PromtMessage);
+                _playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().PromtMessage);
+
+                if(_playerInput.interactKey == true)
+                {
+                    interactable.BaseInteract();
+                }
+            }
         }
     }
 }

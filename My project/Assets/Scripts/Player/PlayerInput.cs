@@ -8,6 +8,7 @@ public class PlayerInput : MonoBehaviour
     public float zPos { get; private set; }
     public float mouseLR { get; private set; }
     public float mouseUD { get; private set; }
+    public bool interactKey { get; private set; }
     
 
     private void Awake()
@@ -24,6 +25,8 @@ public class PlayerInput : MonoBehaviour
 
         mouseLR = Input.GetAxisRaw("Mouse X");
         mouseUD = Input.GetAxisRaw("Mouse Y");
+
+        interactKey = Input.GetKeyDown(KeyCode.E);
     }
 
 }

@@ -12,7 +12,6 @@ public abstract class Interactable : MonoBehaviour
     }
     protected virtual void Interact()
     {
-        // 아무코드나 이 메소드안에 쓸수있다
-        // 하위클래스 오버라이드를 위한 템플릿
+        
     }
 }
