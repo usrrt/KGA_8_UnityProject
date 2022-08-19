@@ -9,6 +9,7 @@ public class PlayerInput : MonoBehaviour
     public float mouseLR { get; private set; }
     public float mouseUD { get; private set; }
     public bool interactKey { get; private set; }
+    public bool flashLightKey { get; private set; }
     
 
     private void Awake()
@@ -27,6 +28,8 @@ public class PlayerInput : MonoBehaviour
         mouseUD = Input.GetAxisRaw("Mouse Y");
 
         interactKey = Input.GetKeyDown(KeyCode.E);
+
+        flashLightKey = Input.GetKeyDown(KeyCode.F);
     }
 
 }

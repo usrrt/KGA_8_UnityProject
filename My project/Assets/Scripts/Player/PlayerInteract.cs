@@ -25,6 +25,12 @@ public class PlayerInteract : MonoBehaviour
     void Update()
     {
         _playerUI.UpdateText("");
+
+        InteractableRay();
+    }
+
+    public void InteractableRay()
+    {
         // ray생성
         Ray ray = new Ray(cam.transform.position, cam.transform.forward); // origin, direction
         Debug.DrawRay(ray.origin, ray.direction * distance);
@@ -36,14 +42,18 @@ public class PlayerInteract : MonoBehaviour
             {
                 var interactable = hitInfo.collider.GetComponent<Interactable>();
                 // 설정한 레이어마스크에 닿을시 실행할 구문
-                //Debug.Log(hitInfo.collider.GetComponent<Interactable>().PromtMessage);
+                
                 _playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().PromtMessage);
 
                 if(_playerInput.interactKey == true)
                 {
                     interactable.BaseInteract();
+
                 }
             }
         }
+
     }
+
+    
 }
