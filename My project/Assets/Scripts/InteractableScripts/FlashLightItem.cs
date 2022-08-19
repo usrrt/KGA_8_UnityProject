@@ -8,9 +8,11 @@ public class FlashLightItem : Interactable
     private new PlayerLight light;
     protected override void Interact()
     {
-     
+
+        Debug.Log(gameObject.name + " È¹µæ");
         light.hasFlashLight = true;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        Destroy(gameObject);
 
     }
 }

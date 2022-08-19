@@ -9,10 +9,7 @@ public class Door : Interactable
 
     public bool doorOpen = false;
 
-    private void Awake()
-    {
-        
-    }
+    
     protected override void Interact()
     {
         // 여기다가 문 움직임을 구현한다면?

@@ -12,6 +12,8 @@ public class PlayerInteract : MonoBehaviour
     private float distance = 3f;
     [SerializeField]
     private LayerMask layer;
+    [SerializeField]
+    private Inventory _inventory;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,7 @@ public class PlayerInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _playerUI.UpdateText("");
+        _playerUI.UpdateText(""); // 래이 벗어나면 빈칸으로 만듬
 
         InteractableRay();
     }
@@ -48,6 +50,12 @@ public class PlayerInteract : MonoBehaviour
                 if(_playerInput.interactKey == true)
                 {
                     interactable.BaseInteract();
+
+                    // Item태그를 가진 객체만 인벤토리에 저장한다.
+                    if (hitInfo.collider.tag == "Item")
+                    {
+                        _inventory.AcquireItem(hitInfo.collider.GetComponent<ItemPickUp>().item);
+                    }
 
                 }
             }
