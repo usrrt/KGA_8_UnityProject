@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca4b944862c30e44db48352b00468060, type: 3}
-  m_Name: FlashLight
+  m_Name: Box
   m_EditorClassIdentifier: 
-  itemName: FlashLight
-  itemImage: {fileID: 21300000, guid: fc5261f2d59d11345b5008aac668d7a7, type: 3}
-  itemPrefab: {fileID: 6479485098347943278, guid: 68cb79f79b9757647a128ec02bced6ef, type: 3}
+  itemName: Box
+  itemImage: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  itemPrefab: {fileID: 2039241227304409385, guid: 4d002959fce7d614d9f65e0ef32d74c6, type: 3}
   itemType: 0

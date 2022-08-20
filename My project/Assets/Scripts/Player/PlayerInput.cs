@@ -10,13 +10,14 @@ public class PlayerInput : MonoBehaviour
     public float mouseUD { get; private set; }
     public bool interactKey { get; private set; }
     public bool flashLightKey { get; private set; }
-    
+    public bool inventoryKey { get; private set; }
 
     private void Awake()
     {
         // 마우스 커서가 보이지 않게 설정하기
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     private void Update()
@@ -30,6 +31,8 @@ public class PlayerInput : MonoBehaviour
         interactKey = Input.GetKeyDown(KeyCode.E);
 
         flashLightKey = Input.GetKeyDown(KeyCode.F);
+
+        inventoryKey = Input.GetKeyDown(KeyCode.I);
     }
 
 }

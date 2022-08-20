@@ -43,7 +43,4 @@ public class PlayerLight : MonoBehaviour
             }
         }
     }
-
-    // 추후 추가할 사항
-    // 손전등아이템을 소지해야만 기능을 사용할수있다.
 }

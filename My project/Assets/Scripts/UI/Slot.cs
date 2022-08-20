@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class Slot : MonoBehaviour
+public class Slot : MonoBehaviour, IPointerClickHandler
 {
     public Items item; // 획득한 아이템
-    public int itemCount;
-    public Image itemImage;
+    public int itemCount; // 획득한 아이템 갯수
+    public Image itemImage; // 아이템 이미지
 
     // 이미지 투명도 조절
     private void SetColor(float _alpha)
@@ -28,24 +29,37 @@ public class Slot : MonoBehaviour
         SetColor(1);
     }
 
-    // 아이템 개수조절
+    // 슬롯개수 조절
     public void SetSlotCount(int _count)
     {
         itemCount += _count;
-        
-        if(itemCount <= 0)
+
+        if (itemCount <= 0)
         {
-            ClearSlot();
+            clearslot();
         }
     }
 
     // 아이템 클리어
-    private void ClearSlot()
+    private void clearslot()
     {
         item = null;
         itemCount = 0;
         itemImage.sprite = null;
         SetColor(0);
+    }
 
+    // 인터페이스는 껍데기만 남긴다
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if(eventData.button == PointerEventData.InputButton.Right)
+        {
+            // 우클릭시 이벤트 내용 실행
+            if(item != null)
+            {
+                // 정보창만 띄우기
+                Debug.Log(item.itemName);
+            }
+        }
     }
 }

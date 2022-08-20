@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float Speed = 3f;
 
+    private bool inventoryActivated = false;
+
     private void Awake()
     {
         _input = GetComponent<PlayerInput>();
@@ -17,6 +19,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if(_input.inventoryKey)
+        {
+            inventoryActivated = !inventoryActivated;
+        }
+
         Look();
         Move();
     }
@@ -30,6 +37,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Look()
     {
+        if (inventoryActivated)
+            return;
+
         _rotateToMouse.CameraRotate(_input.mouseUD);
         _rotateToMouse.CharacterRotate(_input.mouseLR);
     }

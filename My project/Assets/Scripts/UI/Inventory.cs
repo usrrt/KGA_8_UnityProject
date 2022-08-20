@@ -12,33 +12,43 @@ public class Inventory : MonoBehaviour
     private GameObject _inventoryBase;
     [SerializeField]
     private GameObject _slotGrid;
+    [SerializeField]
+    private PlayerInput _input;
 
-    private Slot[] slots; // 슬롯들을 배열로 가져온다
+    // 슬롯들 
+    private Slot[] slots;
 
-    private bool openIventory;
+    private void Awake()
+    {
+        //_input = GetComponent<PlayerInput>();
+    }
 
     private void Start()
     {
-        slots = _slotGrid.GetComponentsInChildren<Slot>(); // 배열안에 슬로들 넣음
+        slots = _slotGrid.GetComponentsInChildren<Slot>(); // 배열안에 슬롯들 넣음
+        
     }
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.I))
+        if(_input.inventoryKey)
         {
-            openIventory = !openIventory;
+            inventoryActivated = !inventoryActivated;
         }
         TryOpenInventory();
     }
 
     private void TryOpenInventory()
     {
-        if(openIventory)
+        if(inventoryActivated)
         {
+            Cursor.visible = true;
             OpenInventory();
         }
         else
         {
+            Cursor.visible = false;
+
             CloseInventory();
         }
     }
@@ -56,7 +66,6 @@ public class Inventory : MonoBehaviour
     // 슬롯에 아이템 채워넣기
     public void AcquireItem(Items _item, int _count = 1)
     {
-        // 장비아이템이 아닌경우(재료인경우) 카운트만 증가시킨다.
         if(Items.ItemType.Equipment != _item.itemType)
         {
             for (int i = 0; i < slots.Length; i++)
@@ -74,12 +83,11 @@ public class Inventory : MonoBehaviour
 
         for (int i = 0; i < slots.Length; i++)
         {
-
             if (slots[i].item == null)
             {
                 slots[i].AddItem(_item, _count);
+                return;
             }
-
         }
     }
 }
