@@ -4,12 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
-public class Slot : MonoBehaviour, IPointerClickHandler
+public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Items item; // 획득한 아이템
     public int itemCount; // 획득한 아이템 갯수
     public Image itemImage; // 아이템 이미지
+
+    [SerializeField]
+    private GameObject _tooltip;
+
+    [SerializeField]
+    private TextMeshProUGUI _tooltipText;
+
+    private void Awake()
+    {
+        _tooltip.SetActive(false);
+    }
 
     // 이미지 투명도 조절
     private void SetColor(float _alpha)
@@ -25,6 +37,7 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         item = _item;
         itemCount = count;
         itemImage.sprite = item.itemImage; // item.itemImage 리턴값은 sprite 타입을 준수할것
+        
 
         SetColor(1);
     }
@@ -49,17 +62,24 @@ public class Slot : MonoBehaviour, IPointerClickHandler
         SetColor(0);
     }
 
-    // 인터페이스는 껍데기만 남긴다
-    public void OnPointerClick(PointerEventData eventData)
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        if(eventData.button == PointerEventData.InputButton.Right)
+        
+        if(item != null)
         {
-            // 우클릭시 이벤트 내용 실행
-            if(item != null)
-            {
-                // 정보창만 띄우기
-                Debug.Log(item.itemName);
-            }
+            // 아이템 각각의 툴팁 UI 켜기
+            _tooltip.SetActive(true);
+            _tooltipText.text = item.itemToolTip;
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (item != null)
+        {
+            // 아이템 각각의 툴팁 UI 끄기
+            _tooltip.SetActive(false);
+            _tooltipText.text = "";
         }
     }
 }

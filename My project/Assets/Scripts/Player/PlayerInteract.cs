@@ -45,7 +45,7 @@ public class PlayerInteract : MonoBehaviour
                 var interactable = hitInfo.collider.GetComponent<Interactable>();
                 // 설정한 레이어마스크에 닿을시 실행할 구문
                 
-                _playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().PromtMessage);
+                _playerUI.UpdateText(interactable.PromtMessage);
 
                 if(_playerInput.interactKey == true)
                 {

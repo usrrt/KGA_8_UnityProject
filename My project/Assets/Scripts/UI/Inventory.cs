@@ -48,7 +48,6 @@ public class Inventory : MonoBehaviour
         else
         {
             Cursor.visible = false;
-
             CloseInventory();
         }
     }

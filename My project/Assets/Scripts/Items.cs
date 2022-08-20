@@ -10,6 +10,9 @@ public class Items : ScriptableObject // 굳이 게임오브젝트에 붙일 필요없음
     public GameObject itemPrefab; // 아이템 프리펩
     public ItemType itemType;
 
+    // 아이템 설명?
+    public string itemToolTip;
+
     public enum ItemType
     {
         Equipment,
