@@ -65,21 +65,7 @@ public class Inventory : MonoBehaviour
     // 슬롯에 아이템 채워넣기
     public void AcquireItem(Items _item, int _count = 1)
     {
-        if(Items.ItemType.Equipment != _item.itemType)
-        {
-            for (int i = 0; i < slots.Length; i++)
-            {
-                if (slots[i].item != null)
-                {
-                    if (slots[i].item.itemName == _item.itemName)
-                    {
-                        slots[i].SetSlotCount(_count);
-                        return;
-                    }
-                }
-            }
-        }
-
+        
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].item == null)

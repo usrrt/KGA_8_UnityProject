@@ -21,6 +21,8 @@ public class PlayerInteract : MonoBehaviour
         cam = GetComponent<RotateToMouse>().sight;
         _playerUI = GetComponent<PlayerUI>();
         _playerInput = GetComponent<PlayerInput>();
+
+
     }
 
     // Update is called once per frame
@@ -38,16 +40,14 @@ public class PlayerInteract : MonoBehaviour
         Debug.DrawRay(ray.origin, ray.direction * distance);
         // 콜라이더 정보를 담을 Raycast필요
         RaycastHit hitInfo;
-        if(Physics.Raycast(ray, out hitInfo, distance, layer))
+        if (Physics.Raycast(ray, out hitInfo, distance, layer))
         {
-            if(hitInfo.collider.GetComponent<Interactable>() != null)
+            if (hitInfo.collider.GetComponent<Interactable>() != null)
             {
                 var interactable = hitInfo.collider.GetComponent<Interactable>();
                 // 설정한 레이어마스크에 닿을시 실행할 구문
-                
-                _playerUI.UpdateText(interactable.PromtMessage);
 
-                if(_playerInput.interactKey == true)
+                if (_playerInput.interactKey == true)
                 {
                     interactable.BaseInteract();
 
@@ -56,12 +56,16 @@ public class PlayerInteract : MonoBehaviour
                     {
                         _inventory.AcquireItem(hitInfo.collider.GetComponent<ItemPickUp>().item);
                     }
-
+                }
+                else
+                {
+                    // 텍스트 띄우는곳
+                    _playerUI.UpdateText(interactable.PromtMessage);
                 }
             }
         }
 
     }
 
-    
+
 }

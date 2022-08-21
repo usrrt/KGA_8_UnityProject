@@ -6,6 +6,6 @@ public class Box : Interactable
 {
     protected override void Interact()
     {
-        Debug.Log("상호작용: " + gameObject.name);
+        //Gamemanager.Instance.PromtMessage = "확인용 메세지";
     }
 }

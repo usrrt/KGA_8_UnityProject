@@ -10,7 +10,6 @@ public class PlayerLight : MonoBehaviour
 
     private bool flashLightEnable;
 
-    public bool hasFlashLight;
 
     private void Awake()
     {
@@ -21,12 +20,12 @@ public class PlayerLight : MonoBehaviour
     {
         _light.SetActive(false);
 
-        hasFlashLight = false;
+
     }
 
     private void LateUpdate()
     {
-        if(hasFlashLight)
+        if(GameManager.Instance.playerHasLight)
         {
             if(_input.flashLightKey)
             {

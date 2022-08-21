@@ -18,6 +18,8 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField]
     private TextMeshProUGUI _tooltipText;
 
+    
+
     private void Awake()
     {
         _tooltip.SetActive(false);
@@ -29,6 +31,8 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         Color color = itemImage.color;
         color.a = _alpha;
         itemImage.color = color;
+
+       
     }
 
     // 아이템 획득
@@ -37,7 +41,6 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         item = _item;
         itemCount = count;
         itemImage.sprite = item.itemImage; // item.itemImage 리턴값은 sprite 타입을 준수할것
-        
 
         SetColor(1);
     }
