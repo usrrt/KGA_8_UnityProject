@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,43 +13,50 @@ namespace SojaExiles
 		public bool open;
 		public Transform Player;
 
-		void Start()
+		private PlayerInput input;
+        private void Awake()
+        {
+            input = GetComponent<PlayerInput>();
+        }
+
+        void Start()
 		{
 			open = false;
 		}
 
-		void OnMouseOver()
-		{
-			{
-				if (Player)
-				{
-					float dist = Vector3.Distance(Player.position, transform.position);
-					if (dist < 15)
-					{
-						if (open == false)
-						{
-							if (Input.GetMouseButtonDown(0))
-							{
-								StartCoroutine(opening());
-							}
-						}
-						else
-						{
-							if (open == true)
-							{
-								if (Input.GetMouseButtonDown(0))
-								{
-									StartCoroutine(closing());
-								}
-							}
+        private void Update()
+        {
+			DoorOpenClose();
+        }
 
+        private void DoorOpenClose()
+        {
+			if (Player)
+			{
+				float dist = Vector3.Distance(Player.position, transform.position);
+				if (dist < 15)
+				{
+					if (open == false)
+					{
+						if (input.interactKey)
+						{
+							StartCoroutine(opening());
+						}
+					}
+					else
+					{
+						if (open == true)
+						{
+							if (input.interactKey)
+							{
+								StartCoroutine(closing());
+							}
 						}
 
 					}
+
 				}
-
 			}
-
 		}
 
 		IEnumerator opening()

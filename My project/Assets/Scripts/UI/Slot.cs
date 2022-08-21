@@ -18,8 +18,6 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     [SerializeField]
     private TextMeshProUGUI _tooltipText;
 
-    
-
     private void Awake()
     {
         _tooltip.SetActive(false);
@@ -31,8 +29,6 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         Color color = itemImage.color;
         color.a = _alpha;
         itemImage.color = color;
-
-       
     }
 
     // æ∆¿Ã≈€ »πµÊ
