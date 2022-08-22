@@ -1,5 +1,6 @@
 # KGA_8_UnityProject 
 [노션링크](https://poised-silene-932.notion.site/3031760752434d18bcfaaae56507d36f?v=f934302a99bc4367862089b7d8336945)
+---
 8/16 ~ 9/2 3d개인프로젝트 + vr프로젝트
 
 - 3d게임으로 1인칭 공포게임 만든후 vr버전으로 디벨롭까지
