@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RotateToMouse : MonoBehaviour
 {
-    private float limitMinX = -80; // 시점 위아래 범위
-    private float limitMaxX = 50;
+    private float limitMinX = -85; // 시점 위아래 범위
+    private float limitMaxX = 70;
 
     private float eulerAngleX; 
     private float eulerAngleY;
