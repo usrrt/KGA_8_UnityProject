@@ -6,8 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
     private PlayerInput _input;
     private RotateToMouse _rotateToMouse;
+    private CharacterController _controller;
 
-    public float Speed = 3f;
+    [SerializeField]
+    private float Speed = 3f; 
+    [SerializeField]
+    private float gravity = 10f;
 
     private bool inventoryActivated = false;
 
@@ -15,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _input = GetComponent<PlayerInput>();
         _rotateToMouse = GetComponent<RotateToMouse>();
+        _controller = GetComponent<CharacterController>();
     }
 
     private void Update()
@@ -31,7 +36,9 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
 
-        transform.Translate(new Vector3(_input.xPos, 0, _input.zPos) * Speed * Time.deltaTime);
+        Vector3 moveDir = transform.TransformDirection(new Vector3(_input.xPos, 0, _input.zPos) * Speed * Time.deltaTime);
+        moveDir.y -= gravity;
+        _controller.Move(moveDir);
 
     }
 

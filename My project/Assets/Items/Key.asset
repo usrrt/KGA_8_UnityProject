@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Key
   itemImage: {fileID: 21300000, guid: cb36fc14bdd0ae14a907cc2e0576b219, type: 3}
-  itemPrefab: {fileID: 3043203369526645748, guid: a8de02a5b54d33941aaca5f71d5cbf91, type: 3}
+  itemPrefab: {fileID: 782772641619437305, guid: 34f319d1349fd5e47b84f227422aaf8d, type: 3}
   itemType: 1
-  itemToolTip: "\uB2E4\uB77D\uBC29 \uC5F4\uC1E0"
+  itemToolTip: "\uC228\uACA8\uC9C4 \uC5F4\uC1E0"

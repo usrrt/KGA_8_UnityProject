@@ -47,6 +47,7 @@ public class Door : Interactable
             yield return new WaitForSeconds(0.5f);
         }
 
+        
     }
 
 }

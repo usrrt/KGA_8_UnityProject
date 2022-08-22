@@ -11,14 +11,6 @@ public class RotateToMouse : MonoBehaviour
     private float eulerAngleY;
 
     public Camera sight;
-    private Rigidbody _rb;
-
-
-    private void Awake()
-    {
-        _rb = GetComponent<Rigidbody>();
-    }
-
 
     public void CameraRotate(float mouseY)
     {
@@ -29,8 +21,6 @@ public class RotateToMouse : MonoBehaviour
         eulerAngleX = ClampAngle(eulerAngleX, limitMinX, limitMaxX);
 
         sight.transform.localEulerAngles = new Vector3(eulerAngleX, 0, 0);
-
-        
 
     }
 
