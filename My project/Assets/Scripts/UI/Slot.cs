@@ -11,6 +11,8 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Items item; // 획득한 아이템
     public int itemCount; // 획득한 아이템 갯수
     public Image itemImage; // 아이템 이미지
+    public GameObject itemContainer;
+    public string itemName;
 
     [SerializeField]
     private GameObject _tooltip;
@@ -37,6 +39,9 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         item = _item;
         itemCount = count;
         itemImage.sprite = item.itemImage; // item.itemImage 리턴값은 sprite 타입을 준수할것
+        itemName = item.itemName;
+        // 아이템의 프리펩저장
+        itemContainer = item.itemPrefab;
 
         SetColor(1);
     }
@@ -58,6 +63,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         item = null;
         itemCount = 0;
         itemImage.sprite = null;
+        itemContainer = null;
         SetColor(0);
     }
 

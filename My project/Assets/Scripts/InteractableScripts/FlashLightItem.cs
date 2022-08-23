@@ -11,6 +11,5 @@ public class FlashLightItem : Interactable
         Debug.Log(gameObject.name + " È¹µæ");
         GameManager.Instance.playerHasLight = true;
         Destroy(gameObject);
-
     }
 }

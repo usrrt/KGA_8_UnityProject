@@ -56,6 +56,8 @@ public class PlayerInteract : MonoBehaviour
                     {
                         _inventory.AcquireItem(hitInfo.collider.GetComponent<ItemPickUp>().item);
                     }
+
+
                 }
                 else
                 {

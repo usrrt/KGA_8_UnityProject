@@ -7,11 +7,10 @@ public class PlayerUI : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI _promtText;
-    
+
 
     public void UpdateText(string promtStr)
     {
-        
-            _promtText.text = promtStr;
+        _promtText.text = promtStr;
     }
 }

@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
     private PlayerInput _input;
 
     // 슬롯들 
-    private Slot[] slots;
+    public Slot[] slots;
 
     private void Awake()
     {
@@ -65,13 +65,28 @@ public class Inventory : MonoBehaviour
     // 슬롯에 아이템 채워넣기
     public void AcquireItem(Items _item, int _count = 1)
     {
-        
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].item == null)
             {
                 slots[i].AddItem(_item, _count);
                 return;
+            }
+        }
+    }
+
+    // 슬롯에 사용한 아이템 사용하기
+    public void UseItem(string _name)
+    {
+        int _count = -1;
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if(slots[i].item != null)
+            {
+                if (slots[i].item.itemName == _name)
+                {
+                    slots[i].SetSlotCount(_count);
+                }
             }
         }
     }

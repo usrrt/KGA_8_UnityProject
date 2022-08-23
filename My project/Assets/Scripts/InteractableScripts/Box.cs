@@ -6,6 +6,6 @@ public class Box : Interactable
 {
     protected override void Interact()
     {
-        //Gamemanager.Instance.PromtMessage = "확인용 메세지";
+
     }
 }

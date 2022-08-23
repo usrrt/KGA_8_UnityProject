@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Key
   m_EditorClassIdentifier: 
   itemName: Key
-  itemImage: {fileID: 21300000, guid: cb36fc14bdd0ae14a907cc2e0576b219, type: 3}
+  itemImage: {fileID: 21300000, guid: 176c1980e641bca499d7f48b64553cb1, type: 3}
   itemPrefab: {fileID: 782772641619437305, guid: 34f319d1349fd5e47b84f227422aaf8d, type: 3}
   itemType: 1
   itemToolTip: "\uC228\uACA8\uC9C4 \uC5F4\uC1E0"

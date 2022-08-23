@@ -10,9 +10,16 @@ public class GameManager : Singletone<GameManager>
 
     public bool playerHasKey;
 
+    public bool playerHasWine;
+
+   
+
     private void Start()
     {
         playerHasLight = false;
         playerHasKey = false;
+        playerHasKey = false;
     }
+
+    
 }

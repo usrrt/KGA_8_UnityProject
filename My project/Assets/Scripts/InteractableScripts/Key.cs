@@ -8,6 +8,6 @@ public class Key : Interactable
     {
         Debug.Log(gameObject.name + " È¹µæ");
         GameManager.Instance.playerHasKey = true;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

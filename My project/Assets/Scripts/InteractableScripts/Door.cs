@@ -14,7 +14,6 @@ public class Door : Interactable
 
     protected override void Interact()
     {
-        Debug.Log("check");
         // 태그가 Lock일시 doorIsLock = true;
         if(gameObject.tag == "LockDoor")
         {
@@ -46,8 +45,8 @@ public class Door : Interactable
             _ani.SetBool("Open", doorAction);
             yield return new WaitForSeconds(0.5f);
         }
-
-        
     }
+
+   
 
 }
