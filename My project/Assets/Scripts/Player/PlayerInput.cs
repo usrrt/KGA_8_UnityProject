@@ -11,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     public bool interactKey { get; private set; }
     public bool flashLightKey { get; private set; }
     public bool inventoryKey { get; private set; }
+    public bool sitKey { get; private set; }
 
     private void Awake()
     {
@@ -33,6 +34,8 @@ public class PlayerInput : MonoBehaviour
         flashLightKey = Input.GetKeyDown(KeyCode.F);
 
         inventoryKey = Input.GetKeyDown(KeyCode.I);
+
+        sitKey = Input.GetKeyDown(KeyCode.C);
     }
 
 }

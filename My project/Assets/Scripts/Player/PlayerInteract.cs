@@ -42,8 +42,10 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo, distance, layer))
         {
+
             if (hitInfo.collider.GetComponent<Interactable>() != null)
             {
+
                 var interactable = hitInfo.collider.GetComponent<Interactable>();
                 // 설정한 레이어마스크에 닿을시 실행할 구문
 
@@ -57,13 +59,20 @@ public class PlayerInteract : MonoBehaviour
                         _inventory.AcquireItem(hitInfo.collider.GetComponent<ItemPickUp>().item);
                     }
 
-
                 }
                 else
                 {
                     // 텍스트 띄우는곳
                     _playerUI.UpdateText(interactable.PromtMessage);
                 }
+
+
+
+
+
+
+
+
             }
         }
 

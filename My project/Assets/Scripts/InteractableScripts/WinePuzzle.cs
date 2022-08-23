@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class WinePuzzle : Interactable
 {
-    
+    public delegate void ChainFuc();
+    public static event ChainFuc Unlock;
+
     private Inventory _inven;
     private GameObject _prefab;
 
@@ -16,6 +18,7 @@ public class WinePuzzle : Interactable
         _inven = GameObject.Find("Inventory").GetComponent<Inventory>();
 
         PromtMessage = "와인 꽂기 [E]";
+
     }
     protected override void Interact()
     {
@@ -26,7 +29,7 @@ public class WinePuzzle : Interactable
 
             for (int i = 0; i < _inven.slots.Length; i++)
             {
-                if( _inven.slots[i] != null )
+                if (_inven.slots[i] != null)
                 {
                     if (_inven.slots[i].itemName == "WineBottleKey")
                     {
@@ -39,10 +42,20 @@ public class WinePuzzle : Interactable
             GameObject instance = Instantiate(_prefab, transform.position - dis, _prefab.transform.rotation);
 
             GameManager.Instance.playerHasWine = false;
-            
+
             _inven.UseItem("WineBottleKey");
+
+
+            // 맞는 위치일시 문이 열린다.
+            if (gameObject.CompareTag("PuzzleAnswer"))
+            {
+                // winedoor열라는 메시지 호출하기
+                Debug.Log("딸깍하는 소리");
+                Unlock();
+            }
+                
         }
+
         
-        // 맞는 위치일시 문이 열린다.
     }
 }

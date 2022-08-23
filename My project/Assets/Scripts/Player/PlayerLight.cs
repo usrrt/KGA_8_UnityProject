@@ -8,7 +8,7 @@ public class PlayerLight : MonoBehaviour
     [SerializeField]
     private GameObject _light;
 
-    private bool flashLightEnable;
+    public bool flashLightEnable;
 
 
     private void Awake()
