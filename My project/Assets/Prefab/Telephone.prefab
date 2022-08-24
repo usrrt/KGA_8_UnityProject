@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7752630162526599355}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Component16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 239016804131023010}
   - component: {fileID: 8848209602507853383}
   - component: {fileID: 2845894507004166611}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 6598841989925069297}
   - component: {fileID: 9114684934120764175}
   - component: {fileID: 4440930912587591669}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5829461892629943596}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Component6:1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,6 @@ GameObject:
   - component: {fileID: 8394945848249489519}
   - component: {fileID: 7314908650987468306}
   - component: {fileID: 182813729489199368}
-  - component: {fileID: 148080582385899144}
   m_Layer: 7
   m_Name: Body1
   m_TagString: Untagged
@@ -313,19 +312,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &148080582385899144
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2431197170417023478}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0059466506, y: 0.016899984, z: 0.007}
-  m_Center: {x: 0.027628139, y: -0.0014160513, z: -0.0035}
 --- !u!1 &3005216825232052268
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2386280651623411848}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Component9:1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +353,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5549748848815891918}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Component4:1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +387,7 @@ GameObject:
   - component: {fileID: 4732060257104136913}
   - component: {fileID: 5016136140486447154}
   - component: {fileID: 6455003123834741726}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7195188125441863145}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Component16:1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +500,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4653091390323021395}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Component1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +537,7 @@ GameObject:
   - component: {fileID: 7268021151996645122}
   - component: {fileID: 1320495896140309385}
   - component: {fileID: 9131239931664082218}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3565818920585596859}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Component17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1510741971053182176}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Component18:1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -696,7 +682,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3981252958150166657}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Telephone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 262350426497267270}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Component4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -763,7 +749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4301888470048728934}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Component6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -797,7 +783,7 @@ GameObject:
   - component: {fileID: 3595837163091562298}
   - component: {fileID: 5713667453870870907}
   - component: {fileID: 4627922254365375743}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -878,7 +864,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6570435242924001429}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Component9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -923,7 +909,7 @@ GameObject:
   - component: {fileID: 356545992432080859}
   - component: {fileID: 4544009712968646244}
   - component: {fileID: 5560772293140550829}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1006,7 +992,7 @@ GameObject:
   - component: {fileID: 3248361668889304504}
   - component: {fileID: 2114735423781962458}
   - component: {fileID: 6320184309264872857}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1089,7 +1075,7 @@ GameObject:
   - component: {fileID: 5950067914403134028}
   - component: {fileID: 6536525484258051946}
   - component: {fileID: 4895049359450418395}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1172,7 +1158,7 @@ GameObject:
   - component: {fileID: 2762271266647075310}
   - component: {fileID: 222865569277495106}
   - component: {fileID: 6321367107796789587}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1255,7 +1241,7 @@ GameObject:
   - component: {fileID: 3205284277793663987}
   - component: {fileID: 1049274407268672124}
   - component: {fileID: 8839947647381249274}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1338,7 +1324,7 @@ GameObject:
   - component: {fileID: 1383837498199838712}
   - component: {fileID: 3902100868377972126}
   - component: {fileID: 7001837861310806039}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1419,7 +1405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8845405964918933606}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Component18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1452,7 +1438,7 @@ GameObject:
   - component: {fileID: 298094691253736765}
   - component: {fileID: 9067202092838650013}
   - component: {fileID: 3973865937949879340}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1535,7 +1521,7 @@ GameObject:
   - component: {fileID: 5374447194954931156}
   - component: {fileID: 1671362278815898625}
   - component: {fileID: 3460579982832938448}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1616,7 +1602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6722822100700870072}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Component1:1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,7 +1636,7 @@ GameObject:
   - component: {fileID: 1860200727538960950}
   - component: {fileID: 517244045087954244}
   - component: {fileID: 9117893441436597093}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1733,7 +1719,10 @@ GameObject:
   - component: {fileID: 1438652470103994556}
   - component: {fileID: 9129741914259414761}
   - component: {fileID: 2312600034752132667}
-  m_Layer: 0
+  - component: {fileID: 8743323970341987541}
+  - component: {fileID: 5288414507140423420}
+  - component: {fileID: 6200879809528883085}
+  m_Layer: 7
   m_Name: Body1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1748,8 +1737,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8845844951165925569}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: -0.00093792, y: -4.0745e-10, z: 0.0074288}
+  m_LocalScale: {x: 11.966, y: 10, z: 11.914999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 262350426497267270}
@@ -1805,6 +1794,128 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8743323970341987541
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8845844951165925569}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.008312025, y: 0.007000002, z: 0.008556667}
+  m_Center: {x: 0.00047703175, y: -0.0000000037252903, z: -0.0038783327}
+--- !u!114 &5288414507140423420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8845844951165925569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf5927805b6792409bd23d5cbf5ad58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PromtMessage: 
+--- !u!82 &6200879809528883085
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8845844951165925569}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8973147709816198538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,7 +1925,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2792815960797626089}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Component17:1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,6 +9,7 @@ TagManager:
   - LockDoor
   - LockDoor_Wine
   - PuzzleAnswer
+  - NeverOpen
   layers:
   - Default
   - TransparentFX

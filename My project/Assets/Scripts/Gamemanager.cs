@@ -12,8 +12,6 @@ public class GameManager : Singletone<GameManager>
 
     public bool playerHasWine;
 
-   
-
     private void Start()
     {
         playerHasLight = false;
@@ -21,5 +19,13 @@ public class GameManager : Singletone<GameManager>
         playerHasKey = false;
     }
 
-    
+    private float elapsedTime;
+    public float PlayTime;
+    private void Update()
+    {
+        // 게임 진행시간 체크하기
+        elapsedTime += Time.deltaTime;
+        PlayTime = Mathf.Round(elapsedTime);
+    }
+
 }

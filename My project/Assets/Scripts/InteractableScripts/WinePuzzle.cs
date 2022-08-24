@@ -10,6 +10,9 @@ public class WinePuzzle : Interactable
     private Inventory _inven;
     private GameObject _prefab;
 
+    public AudioSource _audio;
+    public AudioClip _audioClip;
+
     private float wineRepositionAngle = -90f;
     private float wineRepositionZpos = -0.427f;
 
@@ -25,8 +28,6 @@ public class WinePuzzle : Interactable
         // 플레이어가 와인병을 가지고있다면
         if (GameManager.Instance.playerHasWine)
         {
-            // gameObject.SetActive(false);
-
             for (int i = 0; i < _inven.slots.Length; i++)
             {
                 if (_inven.slots[i] != null)
@@ -49,8 +50,7 @@ public class WinePuzzle : Interactable
             // 맞는 위치일시 문이 열린다.
             if (gameObject.CompareTag("PuzzleAnswer"))
             {
-                // winedoor열라는 메시지 호출하기
-                Debug.Log("딸깍하는 소리");
+                _audio.PlayOneShot(_audioClip);
                 Unlock();
             }
                 

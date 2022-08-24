@@ -2,18 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameStartLightOff : MonoBehaviour
+public class PhonRingEvent : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject lights;
-    
-    
+    public AudioSource audio;
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            
-            lights.SetActive(false);
+            EventManager.Instance.PhoneRingEvent(audio);
         }
     }
 }

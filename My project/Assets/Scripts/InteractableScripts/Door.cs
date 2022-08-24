@@ -19,7 +19,11 @@ public class Door : Interactable
 
     protected override void Interact()
     {
-        
+        if(gameObject.tag == "NeverOpen")
+        {
+            PromtMessage = "열리지 않는다.";
+            Debug.Log("찰칵거리는 소리");
+        }
         // 태그가 Lock일시 doorIsLock = true;
         if(gameObject.tag == "LockDoor")
         {
