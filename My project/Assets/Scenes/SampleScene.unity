@@ -28411,7 +28411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3578b4f4a0b44af41bc97d4c6896a003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PromtMessage: "\uC5EC\uAE30\uC5D0 \uBE44\uBC00\uBC88\uD638"
+  PromtMessage: '[E]'
   _ani: {fileID: 808951036728346687}
   clip: {fileID: 0}
   audio: {fileID: 0}
@@ -46718,7 +46718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &808951037323504408
 MeshFilter:
   m_ObjectHideFlags: 0
