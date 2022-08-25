@@ -18,10 +18,7 @@ public class Inventory : MonoBehaviour
     // ½½·Ôµé 
     public Slot[] slots;
 
-    private void Awake()
-    {
-        //_input = GetComponent<PlayerInput>();
-    }
+   
 
     private void Start()
     {

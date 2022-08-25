@@ -7,14 +7,18 @@ public class Door : Interactable
 {
     [SerializeField]
     private Animator _ani;   
+
+    public AudioClip clip;
+    public AudioSource audio;
+
     public bool doorIsLock;
     private bool doorAction;
 
-    
 
     private void Start()
     {
         WinePuzzle.Unlock += OpenPuzzleDoor;
+        PassWordScript.Pass += ClosePuzzleDoor;
     }
 
     protected override void Interact()
@@ -59,6 +63,16 @@ public class Door : Interactable
         {
             _ani.SetBool("Open", true);
             Debug.Log("문열리는 소리");
+        }
+    }
+
+    // 비밀번호를 풀었을때 실행한다.
+    public void ClosePuzzleDoor()
+    {
+        if (gameObject.transform.CompareTag("LockDoor_Wine"))
+        {
+            _ani.SetBool("Open", false);
+            audio.PlayOneShot(clip);
         }
     }
 

@@ -18,7 +18,7 @@ public class PlayerLight : MonoBehaviour
 
     private void Start()
     {
-        _light.SetActive(false);
+        //_light.SetActive(false);
 
 
     }
@@ -40,6 +40,10 @@ public class PlayerLight : MonoBehaviour
             {
                 _light.SetActive(flashLightEnable);
             }
+        }
+        else
+        {
+            _light.SetActive(false);
         }
     }
 }

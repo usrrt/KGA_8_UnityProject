@@ -17,6 +17,7 @@ public class EventManager : Singletone<EventManager>
         if (GameManager.Instance.PlayTime >= num)
         {
             Debug.Log("wispering...");
+            GameManager.Instance.elapsedTime = 0;
         }
     }
 

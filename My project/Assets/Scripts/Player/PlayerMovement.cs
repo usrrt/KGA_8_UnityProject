@@ -50,6 +50,10 @@ public class PlayerMovement : MonoBehaviour
         if (inventoryActivated)
             return;
 
+        // 마우스 안움직이게함
+        if (GameManager.Instance.KeyPadActivated)
+            return;
+
         if(_input.sitKey)
         {
             sitDown = !sitDown;

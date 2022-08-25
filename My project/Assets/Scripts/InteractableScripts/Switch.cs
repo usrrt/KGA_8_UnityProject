@@ -9,6 +9,7 @@ public class Switch : Interactable
 
     void Start()
     {
+        light.enabled = false;
         PromtMessage = "½ºÀ§Ä¡ [E]";
     }
 

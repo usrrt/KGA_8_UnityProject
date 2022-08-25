@@ -35,11 +35,10 @@ public class PlayerInteract : MonoBehaviour
 
     public void InteractableRay()
     {
-        // ray생성
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward); // origin, direction
-        Debug.DrawRay(ray.origin, ray.direction * distance);
-        // 콜라이더 정보를 담을 Raycast필요
         RaycastHit hitInfo;
+
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+
         if (Physics.Raycast(ray, out hitInfo, distance, layer))
         {
 

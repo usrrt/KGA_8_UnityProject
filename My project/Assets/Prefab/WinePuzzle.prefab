@@ -59,4 +59,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PromtMessage: '[E]'
-  _inven: {fileID: 0}
+  _audio: {fileID: 0}
+  _audioClip: {fileID: 0}

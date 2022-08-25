@@ -12,14 +12,20 @@ public class GameManager : Singletone<GameManager>
 
     public bool playerHasWine;
 
+    public bool playerHasKnife;
+
+    public bool KeyPadActivated;
+
     private void Start()
     {
         playerHasLight = false;
         playerHasKey = false;
         playerHasKey = false;
+        playerHasKnife = false;
+        KeyPadActivated = false;
     }
 
-    private float elapsedTime;
+    public float elapsedTime;
     public float PlayTime;
     private void Update()
     {

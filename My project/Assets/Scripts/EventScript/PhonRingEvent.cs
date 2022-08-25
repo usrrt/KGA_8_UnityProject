@@ -10,6 +10,7 @@ public class PhonRingEvent : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             EventManager.Instance.PhoneRingEvent(audio);
+            GameManager.Instance.playerHasLight = false;
         }
     }
 }

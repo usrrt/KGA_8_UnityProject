@@ -10,6 +10,7 @@ TagManager:
   - LockDoor_Wine
   - PuzzleAnswer
   - NeverOpen
+  - Enemy
   layers:
   - Default
   - TransparentFX
