@@ -181,8 +181,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "[\uC870\uC791\uBC95]\n\uBC29\uD5A5\uD0A4 \t   - W, A, S, D\n\uC0C1\uD638\uC791\uC6A9
-    - E\n\uC190\uC804\uB4F1 \t   - F\n\uC549\uAE30\t   - C\n\uC778\uBCA4\uD1A0\uB9AC
+  m_text: "[\uC870\uC791\uBC95]\n\uBC29\uD5A5\uD0A4    - W, A, S, D\n\uC0C1\uD638\uC791\uC6A9
+    - E\n\uC190\uC804\uB4F1    - F\n\uC549\uAE30\t   - C\n\uC778\uBCA4\uD1A0\uB9AC
     - I\n\n[\uB300\uCDA9 \uC124\uBA85]\n\uB098 \uD640\uB85C \uC228\uBC14\uAF2D\uC9C8
     \uD558\uACE0 \uC778\uD615 \uCC3E\uB294 \uAC8C\uC784\u314E\u314E\n\n[\uC5D4\uB529]\n5\uC2DC\uC804\uC5D0
     \uC778\uD615 \uCC3E\uAE30"
@@ -440,8 +440,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1416495044}
-        m_TargetAssemblyTypeName: ReturnScript, Assembly-CSharp
+      - m_Target: {fileID: 1416495047}
+        m_TargetAssemblyTypeName: InfoScript, Assembly-CSharp
         m_MethodName: Return
         m_Mode: 1
         m_Arguments:
@@ -618,8 +618,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Return
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cc0198a237537874f87f92dc3fea565d, type: 2}
-  m_sharedMaterial: {fileID: 2958802547766986142, guid: cc0198a237537874f87f92dc3fea565d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b950313ce6d129a47aa78a5e4a5deb3b, type: 2}
+  m_sharedMaterial: {fileID: 2958802547766986142, guid: b950313ce6d129a47aa78a5e4a5deb3b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -788,7 +788,7 @@ GameObject:
   - component: {fileID: 1416495043}
   - component: {fileID: 1416495046}
   - component: {fileID: 1416495045}
-  - component: {fileID: 1416495044}
+  - component: {fileID: 1416495047}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -818,18 +818,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1416495044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416495042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84fb4655f8dfbe34cbd1c4032827ffb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1416495045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -868,6 +856,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416495042}
   m_CullTransparentMesh: 1
+--- !u!114 &1416495047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416495042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1b2a42384ecec4cbd940363756793f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1618272768
 GameObject:
   m_ObjectHideFlags: 0
