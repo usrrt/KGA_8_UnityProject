@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput _input;
     private RotateToMouse _rotateToMouse;
     private CharacterController _controller;
+    private PlayerUI _playerUI;
 
     [SerializeField]
     private float Speed; 
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
         _input = GetComponent<PlayerInput>();
         _rotateToMouse = GetComponent<RotateToMouse>();
         _controller = GetComponent<CharacterController>();
+        _playerUI = GetComponent<PlayerUI>();
     }
 
     private void Update()
@@ -49,9 +51,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (inventoryActivated)
             return;
-
         // 마우스 안움직이게함
         if (GameManager.Instance.KeyPadActivated)
+            return;
+        if (_playerUI.MenuActivated)
             return;
 
         if(_input.sitKey)
