@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    //public bool fjkeljf;
     private PlayerUI playerUI;
+
+    [SerializeField] Canvas _infoCanvas;
 
     private void Awake()
     {
@@ -21,5 +22,11 @@ public class Menu : MonoBehaviour
     public void MainTitle()
     {
         SceneManager.LoadScene("TitleScene");
+    }
+
+    public void ControlInfo()
+    {
+        _infoCanvas.sortingOrder = 10;
+        _infoCanvas.enabled = true;
     }
 }

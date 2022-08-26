@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class TitleScript : MonoBehaviour
 {
+
+    [SerializeField] Canvas _infoCanvas;
+
     public void StartGame()
     {
         SceneManager.LoadScene("GameScene");
@@ -17,6 +20,6 @@ public class TitleScript : MonoBehaviour
 
     public void Info()
     {
-        SceneManager.LoadScene("InfoScene");
+        _infoCanvas.sortingOrder = 10;  
     }
 }
