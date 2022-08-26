@@ -53,6 +53,8 @@ public class PlayerUI : MonoBehaviour
     {
         // 메뉴창 염
         Menu.SetActive(MenuActivated);
+        Time.timeScale = 0f;
+
         // 다른 UI끔
         // 마우스 커서보임
         Cursor.visible = true;
@@ -63,10 +65,7 @@ public class PlayerUI : MonoBehaviour
     {
         // 메뉴창 끔
         Menu.SetActive(MenuActivated);
-        // 다른 UI켬
-        // 마우스커서안보임
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Confined;
+        Time.timeScale = 1f;
 
     }
 

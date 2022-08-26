@@ -9,7 +9,15 @@ public class SecretDrawer : Interactable
     [Header("키패드")]
     public GameObject keyPad;
 
+    public GameObject hiddenKey;
+    
     private bool doorAction;
+
+    private void Start()
+    {
+        // 열기전에 줍지못하게 꺼놓음
+        hiddenKey.SetActive(false);
+    }
 
     private void FixedUpdate()
     {
@@ -29,6 +37,7 @@ public class SecretDrawer : Interactable
         // 키패드 ui 띄우기
         if(passWord.Unlock)
         {
+            hiddenKey.SetActive(true);
             StartCoroutine(DoorAction());
         }
         else

@@ -19,6 +19,8 @@ public class Door : Interactable
     {
         WinePuzzle.Unlock += OpenPuzzleDoor;
         PassWordScript.Pass += ClosePuzzleDoor;
+
+        PromtMessage = "[E]";
     }
 
     protected override void Interact()

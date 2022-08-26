@@ -2,11 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Sound
+{
+    public string soundName;
+    public AudioClip AudioClip;
+}
 public class SoundManager : Singletone<SoundManager>
 {
-    // 문여는 소리
+    public Sound[] sounds;
 
-    // 스위치 소리
+    public AudioSource audio;
 
-    // 속삭임 소리
+    private void Start()
+    {
+        
+    }
 }
