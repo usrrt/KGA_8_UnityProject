@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class DollScript : Interactable
 {
+    private Animator animator;
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
     private void LateUpdate()
     {
         if(GameManager.Instance.playerHasKnife)
@@ -26,6 +31,7 @@ public class DollScript : Interactable
         else
         {
             // Ä®¾øÀ»½Ã
+            animator.SetBool("Waking", true);
             Debug.Log("Ä®ÀÌ ¾ø¾î ³ª Á×¾î¹ö¸±°Å¾ß");
         }
     }

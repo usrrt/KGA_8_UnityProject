@@ -25,13 +25,4 @@ public class GameManager : Singletone<GameManager>
         KeyPadActivated = false;
     }
 
-    public float elapsedTime;
-    public float PlayTime;
-    private void Update()
-    {
-        // 게임 진행시간 체크하기
-        elapsedTime += Time.deltaTime;
-        PlayTime = Mathf.Round(elapsedTime);
-    }
-
 }

@@ -4,6 +4,20 @@ using UnityEngine;
 
 public class EventManager : Singletone<EventManager>
 {
+    float PlayTimer;
+
+    public float RandomTime;
+    private void Start()
+    {
+        RandomTime = Random.Range(20f, 50f);
+        Debug.Log(RandomTime);
+    }
+    private void Update()
+    {
+        PlayTimer += Time.deltaTime;
+
+    }
+
     // 지정구역진입시 폰울림
     public void PhoneRingEvent(AudioSource _audio)
     {
@@ -11,24 +25,18 @@ public class EventManager : Singletone<EventManager>
     }
 
     // 플레이 시간 랜덤 20 ~ 40초진행시 랜덤 속삭임 
-    public void Wispering()
+    public void Wispering(AudioSource _audio)
     {
-        float num = Random.Range(20f, 50f);
-        if (GameManager.Instance.PlayTime >= num)
+        if (PlayTimer >= RandomTime)
         {
-            Debug.Log("wispering...");
-            GameManager.Instance.elapsedTime = 0;
+            Debug.Log("wisper");
+            int random = Random.Range(0, 2);
+            Debug.Log(random);
+            RandomTime = Random.Range(20f, 50f);
+            _audio.PlayOneShot(SoundManager.Instance.sounds[random].AudioClip);
+            PlayTimer = 0;
         }
     }
 
-    // 열쇠 습득시 퍼즐문이 세게 닫힘
-    public void HardCloseDoor()
-    {
-        if(GameManager.Instance.playerHasKey == true)
-        {
-            Debug.Log("Door close ");
-        }
-    }
-
-    // 
+    
 }
