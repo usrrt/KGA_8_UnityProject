@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-    private PlayerUI playerUI;
-
     [SerializeField] Canvas _infoCanvas;
+
+    private PlayerUI playerUI;
 
     private void Awake()
     {

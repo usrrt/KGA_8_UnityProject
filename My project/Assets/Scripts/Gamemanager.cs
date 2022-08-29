@@ -16,6 +16,10 @@ public class GameManager : Singletone<GameManager>
 
     public bool KeyPadActivated;
 
+    public bool TimeOutEnding;
+    public bool DeathEnding;
+    public bool KnifeEnding;
+
     private void Start()
     {
         playerHasLight = false;
@@ -23,6 +27,9 @@ public class GameManager : Singletone<GameManager>
         playerHasKey = false;
         playerHasKnife = false;
         KeyPadActivated = false;
+        TimeOutEnding = false;
+        DeathEnding = false;
+        KnifeEnding = false;
     }
 
 }

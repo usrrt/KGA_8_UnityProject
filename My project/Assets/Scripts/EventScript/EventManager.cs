@@ -32,7 +32,7 @@ public class EventManager : Singletone<EventManager>
             Debug.Log("wisper");
             int random = Random.Range(0, 2);
             Debug.Log(random);
-            RandomTime = Random.Range(20f, 50f);
+            RandomTime = Random.Range(60f, 100f);
             _audio.PlayOneShot(SoundManager.Instance.sounds[random].AudioClip);
             PlayTimer = 0;
         }

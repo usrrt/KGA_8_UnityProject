@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
     private TextMeshProUGUI _timerText;
 
     public string TimeText;
+
+    private int miniute;
+    private int hour;
 
     private void Awake()
     {
@@ -22,8 +26,6 @@ public class Timer : MonoBehaviour
         TimeCalculate();
     }
 
-    int miniute;
-    int hour;
     private void TimeCalculate()
     {
         StartCoroutine(delayTime());
@@ -41,6 +43,12 @@ public class Timer : MonoBehaviour
             _timerText.text = String.Format("{0:D2} : {1:D2}",hour, miniute);
             yield return new WaitForSeconds(2f);
             miniute++;
+            if (hour == 5)
+            {
+                Debug.Log("Time out");
+                yield return new WaitForSeconds(1f);
+                SceneManager.LoadScene("TitleScene");
+            }
         }
     }
 }
