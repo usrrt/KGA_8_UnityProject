@@ -18,7 +18,7 @@ public class Door : Interactable
     private void Start()
     {
         WinePuzzle.Unlock += OpenPuzzleDoor;
-        PassWordScript.Pass += ClosePuzzleDoor;
+        PassWordScript.CloseDoorEvent += ClosePuzzleDoor;
 
         PromtMessage = "[E]";
     }

@@ -18,8 +18,6 @@ public class Inventory : MonoBehaviour
     // 슬롯들 
     public Slot[] slots;
 
-   
-
     private void Start()
     {
         slots = _slotGrid.GetComponentsInChildren<Slot>(); // 배열안에 슬롯들 넣음
@@ -32,6 +30,7 @@ public class Inventory : MonoBehaviour
         {
             inventoryActivated = !inventoryActivated;
         }
+
         TryOpenInventory();
     }
 

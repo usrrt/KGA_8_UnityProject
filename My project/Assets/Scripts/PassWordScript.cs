@@ -8,7 +8,7 @@ public class PassWordScript : MonoBehaviour
 {
     // 풀었을때 이벤트실행
     public delegate void CloseDoorChain();
-    public static event CloseDoorChain Pass;
+    public static event CloseDoorChain CloseDoorEvent;
 
     [Header("비교할 텍스트")]
     public TextMeshProUGUI PasswordText;
@@ -26,7 +26,7 @@ public class PassWordScript : MonoBehaviour
 
     void Update()
     {
-        CheckNumber();
+        InputPassword();
     }
 
     private void CloseKeyPad()
@@ -47,7 +47,7 @@ public class PassWordScript : MonoBehaviour
 
     }
 
-    public void CheckNumber()
+    public void InputPassword()
     {
         OpenKeyPad();
         if (PasswordText.text.Length == 3)
@@ -57,9 +57,8 @@ public class PassWordScript : MonoBehaviour
                 PasswordText.text = "**Correct**";
                 Unlock = true;
                 CloseKeyPad();
-                Pass();
+                CloseDoorEvent();
                 return;
-
             }
             else
             {

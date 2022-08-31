@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     
     private float Speed; 
     private float gravity = 10f;
-    private bool inventoryActivated = false;
 
     private void Awake()
     {
@@ -24,11 +23,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(_input.inventoryKey)
-        {
-            inventoryActivated = !inventoryActivated;
-        }
-
         Look();
         Move();
     }
@@ -47,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Look()
     {
-        if (inventoryActivated)
+        if (Inventory.inventoryActivated)
             return;
         if (GameManager.Instance.KeyPadActivated)
             return;

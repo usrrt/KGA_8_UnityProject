@@ -14,9 +14,6 @@ public class WinePuzzle : Interactable
     public AudioSource _audio;
     public AudioClip _audioClip;
 
-    // 생성된 와인프리팹 위치 재조정
-    private float wineRepositionAngle = -90f;
-    private float wineRepositionZpos = -0.427f;
 
     private void Awake()
     {
@@ -56,6 +53,9 @@ public class WinePuzzle : Interactable
         }
     }
 
+    // 생성된 와인프리팹 위치 재조정
+    private const float wineRepositionAngle = -90f;
+    private const float wineRepositionZpos = -0.427f;
     private void BottlePositionAdjustment()
     {
         _prefab.transform.rotation = Quaternion.Euler(wineRepositionAngle, 0, 0);
