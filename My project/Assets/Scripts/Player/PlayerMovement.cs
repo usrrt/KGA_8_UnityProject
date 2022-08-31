@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +9,9 @@ public class PlayerMovement : MonoBehaviour
     private RotateToMouse _rotateToMouse;
     private CharacterController _controller;
     private PlayerUI _playerUI;
-
-    [SerializeField]
+    
     private float Speed; 
-    [SerializeField]
     private float gravity = 10f;
-
     private bool inventoryActivated = false;
 
     private void Awake()
@@ -37,11 +35,11 @@ public class PlayerMovement : MonoBehaviour
     
     private void Move()
     {
+        PlayerSit();
 
         Vector3 moveDir = transform.TransformDirection(new Vector3(_input.xPos, 0, _input.zPos) * Speed * Time.deltaTime);
         moveDir.y -= gravity;
         _controller.Move(moveDir);
-
     }
 
     private float yPos;
@@ -51,18 +49,24 @@ public class PlayerMovement : MonoBehaviour
     {
         if (inventoryActivated)
             return;
-        // 마우스 안움직이게함
         if (GameManager.Instance.KeyPadActivated)
             return;
         if (_playerUI.MenuActivated)
             return;
 
-        if(_input.sitKey)
+        _rotateToMouse.sight.transform.position = new Vector3(transform.position.x, transform.position.y + yPos, transform.position.z);
+        _rotateToMouse.CameraRotate(_input.mouseUD);
+        _rotateToMouse.CharacterRotate(_input.mouseLR);
+    }
+
+    private void PlayerSit()
+    {
+        if (_input.sitKey)
         {
             sitDown = !sitDown;
         }
 
-        if(sitDown)
+        if (sitDown)
         {
             Speed = 1f;
             yPos -= Time.deltaTime * 10;
@@ -76,11 +80,5 @@ public class PlayerMovement : MonoBehaviour
             if (yPos >= 0.9f)
                 yPos = 0.9f;
         }
-
-        _rotateToMouse.sight.transform.position = new Vector3(transform.position.x, transform.position.y + yPos, transform.position.z);
-        _rotateToMouse.CameraRotate(_input.mouseUD);
-        _rotateToMouse.CharacterRotate(_input.mouseLR);
     }
-
-    
 }

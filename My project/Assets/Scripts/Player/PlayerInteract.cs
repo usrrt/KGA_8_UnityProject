@@ -33,49 +33,39 @@ public class PlayerInteract : MonoBehaviour
         InteractableRay();
     }
 
+    RaycastHit hitInfo;
+    Ray ray;
     public void InteractableRay()
     {
-        RaycastHit hitInfo;
-
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        ray = new Ray(cam.transform.position, cam.transform.forward);
 
         if (Physics.Raycast(ray, out hitInfo, distance, layer))
         {
-
             if (hitInfo.collider.GetComponent<Interactable>() != null)
             {
-
-                var interactable = hitInfo.collider.GetComponent<Interactable>();
-                // 설정한 레이어마스크에 닿을시 실행할 구문
-
-                if (_playerInput.interactKey == true)
-                {
-                    interactable.BaseInteract();
-
-                    // Item태그를 가진 객체만 인벤토리에 저장한다.
-                    if (hitInfo.collider.tag == "Item")
-                    {
-                        _inventory.AcquireItem(hitInfo.collider.GetComponent<ItemPickUp>().item);
-                    }
-
-                }
-                else
-                {
-                    // 텍스트 띄우는곳
-                    _playerUI.UpdateText(interactable.PromtMessage);
-                }
-
-
-
-
-
-
-
-
+                OnInteract();
             }
         }
-
     }
 
+    private void OnInteract()
+    {
+        var interactable = hitInfo.collider.GetComponent<Interactable>();
+        _playerUI.UpdateText(interactable.PromtMessage);
 
+        // 설정한 레이어마스크에 닿을시 실행할 구문
+        if (_playerInput.interactKey == true)
+        {
+            interactable.BaseInteract();
+
+            // Item태그를 가진 객체만 인벤토리에 저장한다.
+            if (hitInfo.collider.tag == "Item")
+            {
+                _inventory.AcquireItem(hitInfo.collider.GetComponent<ItemPickUp>().item);
+            }
+
+            
+
+        }
+    }
 }

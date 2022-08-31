@@ -24,10 +24,8 @@ public class PassWordScript : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
         CheckNumber();
     }
 
@@ -49,7 +47,6 @@ public class PassWordScript : MonoBehaviour
 
     }
 
-    float elapsedTime;
     public void CheckNumber()
     {
         OpenKeyPad();

@@ -22,17 +22,14 @@ public class Phone : Interactable
     protected override void Interact()
     {
         _audio.Stop();
-        // 플레이어 위치 y축으로 -30이동시키기
         TeleportPlayer();
     }
 
     Vector3 telpoY = new Vector3(0f, 15f, 0f);
     private void TeleportPlayer()
     {
-        // 새로운 위치
         Vector3 NewPlayerPosition = player.transform.position - telpoY;
 
-        // 위치 정보를 다시 플레이어에게 넘기기
         player.transform.position = NewPlayerPosition;
     }
 }

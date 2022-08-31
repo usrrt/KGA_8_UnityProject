@@ -28,9 +28,9 @@ public class Door : Interactable
         if(gameObject.tag == "NeverOpen")
         {
             PromtMessage = "열리지 않는다.";
-            Debug.Log("찰칵거리는 소리");
+            SoundManager.Instance.LockDoorSound();
         }
-        // 태그가 Lock일시 doorIsLock = true;
+
         if(gameObject.tag == "LockDoor")
         {
             doorIsLock = !GameManager.Instance.playerHasKey;
@@ -38,24 +38,28 @@ public class Door : Interactable
             if(doorIsLock)
             {
                 PromtMessage = "잠겨있다.";
-                Debug.Log("찰칵거리는 소리");
+                SoundManager.Instance.LockDoorSound();
+
             }
             else
             {
                 PromtMessage = "[E]";
+                SoundManager.Instance.DoorUnlockSound();
                 StartCoroutine(DoorAction());
             }
 
         }
-        else if (gameObject.CompareTag("LockDoor_Wine"))
+
+        if (gameObject.CompareTag("LockDoor_Wine"))
         {
             PromtMessage = "문고리가 없다.";
         }
-        else
+        
+        if (gameObject.CompareTag("Door") || gameObject.CompareTag("Closet") || gameObject.CompareTag("Drawer"))
         {
+            
             StartCoroutine(DoorAction());
         }
-
     }
 
     public void OpenPuzzleDoor()
@@ -64,7 +68,7 @@ public class Door : Interactable
         if(gameObject.transform.CompareTag("LockDoor_Wine"))
         {
             _ani.SetBool("Open", true);
-            Debug.Log("문열리는 소리");
+            SoundManager.Instance.DoorOpenSound();
         }
     }
 
@@ -78,14 +82,30 @@ public class Door : Interactable
         }
     }
 
-
-    // 문이 연속으로 입력받아 닫히는것 방지
     IEnumerator DoorAction()
     {
         doorAction = !doorAction;
+        if(gameObject.CompareTag("Door"))
+        {
+            if (doorAction)
+            {
+                SoundManager.Instance.DoorOpenSound();
+            }
+            else
+            {
+                SoundManager.Instance.DoorCloseSound();
+            }
+        }
+        if (gameObject.CompareTag("Closet"))
+        {
+            SoundManager.Instance.ClosetSounds();
+        }
+        if (gameObject.CompareTag("Drawer"))
+        {
+            SoundManager.Instance.DrawerSounds();
+        }
+        yield return new WaitForSeconds(0.2f);
         _ani.SetBool("Open", doorAction);
-        Debug.Log("문열리는 소리");
-        yield return new WaitForSeconds(0.5f);
     }
 
 

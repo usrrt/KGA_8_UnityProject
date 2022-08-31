@@ -9,7 +9,7 @@ public class PhonRingEvent : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            EventManager.Instance.PhoneRingEvent(audio);
+            audio.Play();
             GameManager.Instance.playerHasLight = false;
         }
     }

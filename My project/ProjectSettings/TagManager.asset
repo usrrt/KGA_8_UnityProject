@@ -11,6 +11,8 @@ TagManager:
   - PuzzleAnswer
   - NeverOpen
   - Enemy
+  - Closet
+  - Drawer
   layers:
   - Default
   - TransparentFX

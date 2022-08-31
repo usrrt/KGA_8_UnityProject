@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class WinePuzzle : Interactable
     public AudioSource _audio;
     public AudioClip _audioClip;
 
+    // 생성된 와인프리팹 위치 재조정
     private float wineRepositionAngle = -90f;
     private float wineRepositionZpos = -0.427f;
 
@@ -38,14 +40,12 @@ public class WinePuzzle : Interactable
                     }
                 }
             }
-            _prefab.transform.rotation = Quaternion.Euler(wineRepositionAngle, 0, 0);
-            Vector3 dis = new Vector3(0f, 0f, wineRepositionZpos);
-            GameObject instance = Instantiate(_prefab, transform.position - dis, _prefab.transform.rotation);
+
+            BottlePositionAdjustment();
 
             GameManager.Instance.playerHasWine = false;
 
             _inven.UseItem("WineBottleKey");
-
 
             // 맞는 위치일시 문이 열린다.
             if (gameObject.CompareTag("PuzzleAnswer"))
@@ -53,9 +53,13 @@ public class WinePuzzle : Interactable
                 _audio.PlayOneShot(_audioClip);
                 Unlock();
             }
-                
         }
+    }
 
-        
+    private void BottlePositionAdjustment()
+    {
+        _prefab.transform.rotation = Quaternion.Euler(wineRepositionAngle, 0, 0);
+        Vector3 dis = new Vector3(0f, 0f, wineRepositionZpos);
+        GameObject instance = Instantiate(_prefab, transform.position - dis, _prefab.transform.rotation);
     }
 }
