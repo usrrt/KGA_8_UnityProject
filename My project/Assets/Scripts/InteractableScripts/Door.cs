@@ -14,11 +14,15 @@ public class Door : Interactable
     public bool doorIsLock;
     private bool doorAction;
 
-
-    private void Start()
+    private void Awake()
     {
         WinePuzzle.Unlock += OpenPuzzleDoor;
         PassWordScript.CloseDoorEvent += ClosePuzzleDoor;
+
+    }
+
+    private void Start()
+    {
 
         PromtMessage = "[E]";
     }
@@ -53,6 +57,8 @@ public class Door : Interactable
         if (gameObject.CompareTag("LockDoor_Wine"))
         {
             PromtMessage = "문고리가 없다.";
+            WinePuzzle.Unlock += OpenPuzzleDoor;
+            PassWordScript.CloseDoorEvent += ClosePuzzleDoor;
         }
         
         if (gameObject.CompareTag("Door") || gameObject.CompareTag("Closet") || gameObject.CompareTag("Drawer"))
@@ -64,18 +70,16 @@ public class Door : Interactable
 
     public void OpenPuzzleDoor()
     {
-        // tag = LockDoor_Wine인 문을 열면된다.
-        if(gameObject.transform.CompareTag("LockDoor_Wine"))
+        if(gameObject.CompareTag("LockDoor_Wine"))
         {
             _ani.SetBool("Open", true);
             SoundManager.Instance.DoorOpenSound();
         }
     }
 
-    // 비밀번호를 풀었을때 실행한다.
     public void ClosePuzzleDoor()
     {
-        if (gameObject.transform.CompareTag("LockDoor_Wine"))
+        if (gameObject.CompareTag("LockDoor_Wine"))
         {
             _ani.SetBool("Open", false);
             audio.PlayOneShot(clip);

@@ -9,7 +9,7 @@ public class EventManager : Singletone<EventManager>
     public float RandomTime;
     private void Start()
     {
-        RandomTime = Random.Range(60f, 100f);
+        RandomTime = Random.Range(150f, 300f);
         Debug.Log(RandomTime);
     }
     private void Update()

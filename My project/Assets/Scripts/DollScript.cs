@@ -22,31 +22,29 @@ public class DollScript : Interactable
         }
     }
 
-    float elapsedTime;
     protected override void Interact()
     {
-        elapsedTime = Time.time;
         if(GameManager.Instance.playerHasKnife)
         {
             // Ä®¼ÒÁö½Ã
             Debug.Log("3¹ø Âî¸§");
             GameManager.Instance.KnifeEnding = true;
-            if(elapsedTime >= 1f)
-            {
-                SceneManager.LoadScene("TitleScene");
-            }
+            SceneManager.LoadScene("KnifeEnding");
 
         }
         else
         {
             // Ä®¾øÀ»½Ã
-            animator.SetBool("Waking", true);
             Debug.Log("Ä®ÀÌ ¾ø¾î ³ª Á×¾î¹ö¸±°Å¾ß");
             GameManager.Instance.DeathEnding = true;
-            if (elapsedTime >= 1.7f)
-            {
-                SceneManager.LoadScene("TitleScene");
-            }
+            StartCoroutine(SceneLoadDelay());
         }
+    }
+
+    IEnumerator SceneLoadDelay()
+    {
+        animator.SetBool("Waking", true);
+        yield return new WaitForSeconds(1.5f);
+        GameManager.Instance.playerDie = true;
     }
 }

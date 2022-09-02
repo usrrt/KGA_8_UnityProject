@@ -176,10 +176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1b2a42384ecec4cbd940363756793f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _TitleCam: {fileID: 2138646388}
-  _InfoCam: {fileID: 1765721087}
-  _camera: {fileID: 409525189}
-  _titleCanvas: {fileID: 1286448381}
   _infoCanvas: {fileID: 824811994}
 --- !u!114 &193619505
 MonoBehaviour:
@@ -1628,10 +1624,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55fe76334a74c0f4b8f8398fcf602d4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _TitleCam: {fileID: 2138646388}
-  _InfoCam: {fileID: 1765721087}
-  _camera: {fileID: 409525189}
-  _titleCanvas: {fileID: 1286448381}
   _infoCanvas: {fileID: 824811994}
 --- !u!1 &1627421379
 GameObject:

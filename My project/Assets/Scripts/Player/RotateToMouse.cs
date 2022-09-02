@@ -21,6 +21,7 @@ public class RotateToMouse : MonoBehaviour
         eulerAngleX = ClampAngle(eulerAngleX, limitMinX, limitMaxX);
 
         sight.transform.localEulerAngles = new Vector3(eulerAngleX, 0, 0);
+        //sight.transform.eulerAngles = new Vector3(eulerAngleX, 0, 0);
 
     }
 

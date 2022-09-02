@@ -22,6 +22,7 @@ public class Phone : Interactable
     protected override void Interact()
     {
         _audio.Stop();
+        SoundManager.Instance._audioBGM.Stop();
         TeleportPlayer();
     }
 

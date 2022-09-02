@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class PlayerSound : MonoBehaviour
 {
-    public delegate void SoundFuns();
-    public static event SoundFuns playSound;
+    
     
     private AudioSource _playerAudio;
     private PlayerInput _input;

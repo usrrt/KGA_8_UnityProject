@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/KnifeEnding.unity
+    guid: cfa0a22f4248b924985d2e5927868c4b
   m_configObjects: {}

@@ -14,12 +14,36 @@ public class SoundManager : Singletone<SoundManager>
 {
     private AudioSource m_AudioSource;
 
+    [Header("BGM Audio")]
+    public AudioSource _audioBGM;
+
     public Sound[] sounds;
 
     private void Awake()
     {
         m_AudioSource = GetComponent<AudioSource>();
-        
+
+        _audioBGM = gameObject.AddComponent<AudioSource>();
+    }
+
+    private void Start()
+    {
+       BackGroundSound();
+    }
+
+    public void BackGroundSound()
+    {
+        _audioBGM.loop = true;
+        _audioBGM.playOnAwake = true;
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].soundName == "StormSound")
+            {
+                _audioBGM.clip = sounds[i].audioClip;
+            }
+        }
+        _audioBGM.volume = 0.2f;
+        _audioBGM.Play();   
     }
 
     public void GameStartSound()
@@ -117,5 +141,20 @@ public class SoundManager : Singletone<SoundManager>
         }
         m_AudioSource.volume = 1f;
         m_AudioSource.PlayOneShot(m_AudioSource.clip);
+    }
+
+    public void DeathSound()
+    {
+        _audioBGM.Stop();
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].soundName == "DeathSound")
+            {
+                m_AudioSource.clip = sounds[i].audioClip;
+            }
+        }
+        m_AudioSource.volume = 1f;
+        m_AudioSource.PlayOneShot(m_AudioSource.clip);
+        
     }
 }

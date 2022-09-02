@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class TitleScript : MonoBehaviour
 {
+    private void Start()
+    {
+        Cursor.visible = true;
+    }
 
     [SerializeField] Canvas _infoCanvas;
-
     public void StartGame()
     {
+        
         SceneManager.LoadScene("GameScene");
     }
 
@@ -20,6 +24,8 @@ public class TitleScript : MonoBehaviour
 
     public void Info()
     {
+        _infoCanvas.enabled = true;
+
         _infoCanvas.sortingOrder = 10;  
     }
 }

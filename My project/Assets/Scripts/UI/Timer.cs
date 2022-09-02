@@ -41,13 +41,11 @@ public class Timer : MonoBehaviour
                 miniute = 0;
             }
             _timerText.text = String.Format("{0:D2} : {1:D2}",hour, miniute);
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(4f);
             miniute++;
             if (hour == 5)
             {
-                Debug.Log("Time out");
-                yield return new WaitForSeconds(1f);
-                SceneManager.LoadScene("TitleScene");
+                GameManager.Instance.playerDie = true;
             }
         }
     }

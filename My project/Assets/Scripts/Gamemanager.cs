@@ -20,7 +20,14 @@ public class GameManager : Singletone<GameManager>
     public bool DeathEnding;
     public bool KnifeEnding;
 
+    public bool playerDie;
+
     private void Start()
+    {
+        Init();
+    }
+
+    public void Init()
     {
         playerHasLight = false;
         playerHasKey = false;
@@ -30,6 +37,7 @@ public class GameManager : Singletone<GameManager>
         TimeOutEnding = false;
         DeathEnding = false;
         KnifeEnding = false;
+        playerDie = false;
     }
 
 }
